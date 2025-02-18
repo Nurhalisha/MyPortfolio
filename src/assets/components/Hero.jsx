@@ -1,5 +1,6 @@
 import React from "react";
 import "./hero.css";
+import background from 'C:\Users\DELL\Desktop\SAM\MyPortfolio\src\assets\image\1600w-pE_Ruap0PiI (1).jpg';
 
 const ProfilePage = () => {
   return (
