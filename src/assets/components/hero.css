@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('image/1600w-pE_Ruap0PiI (1).jpg'); /* Add your image URL here */
+    background-image: url(new URL('../assets/image/1600w-pE_Ruap0PiI (1).jpg', import.meta.url).href);
     background-size: cover; /* Ensure the image covers the conasdasdasdasdtainer */
     background-position: center;
     background-repeat: no-repeat; 
