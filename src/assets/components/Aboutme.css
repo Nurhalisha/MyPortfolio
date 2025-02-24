@@ -18,6 +18,7 @@ body {
     padding: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     margin-left: 10px;
+    
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat;

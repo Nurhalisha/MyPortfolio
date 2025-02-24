@@ -1,10 +1,11 @@
 import React from "react";
 import "./Aboutme.css";
-import PI from "../image/me.jpg"; // Adjust the path
+import PI from "../image/me.jpg"; // Profile image
+import bgImage from "../image/boutme.jpg"; // Background image
 
 const Profile = () => {
   return (
-    <div className="container">
+    <div className="container" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <div className="left-section">
         <h2 className="title">ABOUT ME</h2>
         <img src={PI} alt="Profile" className="profile-image" />
