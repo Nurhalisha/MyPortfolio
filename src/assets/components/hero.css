@@ -10,7 +10,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-image: url('C:\Users\DELL\Desktop\SAM\MyPortfolio\src\assets\image\BGK.jpg'); /* Use relative path */
         background-size: cover; /* Ensures the image covers the entire container */
         background-position: center center; /* Centers the image */
         background-repeat: no-repeat;
