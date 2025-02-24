@@ -1,9 +1,10 @@
 import React from "react";
-import "./Hero.css";
+import "./hero.css";
+import bgImage from "../image/BGK.jpg"; // Adjust the path as needed
 
 const ProfilePage = () => {
   return (
-    <div className="hero-container">
+    <div className="hero-container" style={{ backgroundImage: `url(${bgImage})` }}>
       <div className="hero-card">
         <div className="hero-logo">NS</div>
         <h1 className="hero-title">

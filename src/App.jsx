@@ -1,11 +1,13 @@
 import React from "react";
 import Header from "./assets/components/Hero";
-import "./App.css";
+import About from "./assets/components/About";
+
 
 function App() {
   return (
     <div className="App">
       <Header/>
+      <About/>
     </div>
   );
 }
