@@ -1,13 +1,13 @@
 import React from "react";
 import "./Aboutme.css";
-import profileImage from "../image/me.jpg"; // Adjust the path
+import PI from "../image/me.jpg"; // Adjust the path
 
 const Profile = () => {
   return (
     <div className="container">
       <div className="left-section">
         <h2 className="title">ABOUT ME</h2>
-        <img src={profileImage} alt="Profile" className="profile-image" />
+        <img src={PI} alt="Profile" className="profile-image" />
         <h3 className="name">Nurhalisha Sari (she/her)</h3>
         <p className="role">WEB DEVELOPER / DESIGNER</p>
         <h3 className="section-title">INTRODUCTION</h3>
