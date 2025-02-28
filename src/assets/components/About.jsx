@@ -50,7 +50,7 @@ const About = () => {
             <ul>
               <li>
                 I strive to refine my technical skills, gain hands-on experience, and continuously improve my craft. 
-                Through freelance projects and collaborative work, I"m looking forward to build a strong portfolio that reflects my growth and expertise. 
+                Through freelance projects and collaborative work, I'm looking forward to build a strong portfolio that reflects my growth and expertise. 
                 I'm also working on mastering Python & Java while keeping up with evolving technologies, and aiming to become a Full-Stack Developer.
               </li>
             </ul>
