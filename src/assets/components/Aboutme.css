@@ -1,151 +1,217 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .container {
-    min-height: 100vh;
-    width: 97vw; /* Ensures it covers the full width */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: white;
-    padding: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;
-    
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center center; /* Centers the image */
-    background-repeat: no-repeat;
-   
-  }
-  
-  .left-section {
-    text-align: center;
-    border-right: 2px solid #b5651d;
-    padding-right: 20px;
-  }
-  
-  .profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .title {
-    color: #555;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: #fff;
+/* Import Poppins Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
-    
-  }
-  
-  .name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #555;
-    background-color: #fff;
-  }
-  
-  .role {
-    color: #4b5563;
-    font-weight: bold;
-    background-color: #fff;
-    margin-top: -15px;
-  }
-  
-  .section-title {
-    font-weight: bold;
-    margin-top: 15px;
-    color: #b5651d;
-    background-color: #fff;
-    padding: 15px;
-    border-left: 5px solid #b5651d;
-  }
-  
-  .description, .contest {
-    font-size: 0.9rem;
-    color: #555;
-    background-color: #fff;
-    margin-top: -12px;
-    padding: 15px;
-  
-    border-left: 5px solid #b5651d;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 11px;
-  }
-  .contact{
-    margin-top: -9px;
-    background-color: #1a1a1aa6; /* Tailwind's bg-blue-500 */
-    color: white;
-    padding: 0.75rem 1.5rem;
-    font-weight: 300;
-    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
-    transition: background-color 0.3s ease;
-  }
-  .contact:hover {
-    background: #b5651d;
-  }
-  .icon {
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  .right-section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .box {
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #b5651d;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-    color: #b5651d;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .resume-button {
-    background-color: #1a1a1aa6; /* Tailwind's bg-blue-500 */
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
-    transition: background-color 0.3s ease;
-  }
-  
-  .resume-button:hover {
-    background: #b5651d;
-  }
-  
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  width: 107%;
+}
+
+.about-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.left-section {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #81486d;
+}
+
+.profile-image {
+  width: 128px;
+  height: 154px;
+  border-radius: 13%;
+  object-fit: cover;
+  margin: 10px 0;
+  border: 1px solid #fff;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #b5651d;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 500;
+  color: #b5651dd6;
+  margin-top: 5px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #81486d;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.contact-button {
+  background: linear-gradient(135deg, #b5651d, #0056b3);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+}
+
+.contact-button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: scale(1.05);
+}
+
+.right-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #81486d;
+  margin-bottom: 8px;
+}
+
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box li {
+  font-size: 14px;
+  font-weight: 400;
+  color: #81486d;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Back Button */
+.back-button {
+  color: #b5651d;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+/* Contact Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.email {
+  font-weight: bold;
+  color: #007bff;
+}
+
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;  /* Allow items to wrap to the next row */
+  justify-content: center; /* Center items */
+  gap: 7px; /* Space between items */
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #81486d;
+  gap: 2px; /* Space between icon and text */
+  justify-content: center; /* Centers items */
+  flex: 1 1 calc(33.33% - 15px); /* Ensures 3 items per row */
+  max-width: calc(33.33% - 15px); /* Keeps items aligned in 3s */
+}
+
+/* Icons */
+.skills-list i,
+.skills-list img {
+  width: 20px;
+  height: 20px;
+}
+
+* {
+  cursor: pointer;
+}

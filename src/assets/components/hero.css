@@ -1,17 +1,23 @@
-/* Hero.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Radley&display=swap');
+html, body {
+    margin: -15px;
+    padding: 0;
+    width: 103%;
+    height: 100%;
+    margin-left: -3%;
+  }
+  
 
-    .hero-container {
-        margin-top: -20px;
+.hero-container {
+        margin-top: -2px;
         min-height: 100vh;
-        width: 100vw; /* Ensures it covers the full width */
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-size: cover; /* Ensures the image covers the entire container */
-        background-position: center center; /* Centers the image */
+        background-size: cover; 
+        background-position: center center;
         background-repeat: no-repeat;
         color: #1f2937;
     
@@ -58,7 +64,7 @@
 
 .hero-button {
     margin-top: 1.5rem;
-    background-color: #1a1a1aa6; /* Tailwind's bg-blue-500 */
+    background-color: #1a1a1aa6; 
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 1rem;
@@ -68,7 +74,7 @@
 }
 
 .hero-button:hover {
-    background-color: #b5651d; /* Tailwind's hover:bg-blue-600 */
+    background-color: #b5651d;
 }
 
 .circle-wrapper {
@@ -76,7 +82,7 @@
     position: relative;
 }
 
-/* Styling for "Nur" with bold font */
+
 .circle-text {
     font-weight: bold;
     font-size: 1.2em;
@@ -85,20 +91,19 @@
     z-index: 1;
 }
 
-/* Circling dashed stroke for Nur */
 .circle-animation {
     position: absolute;
     top: 17%;
     left: -5%;
-    width: 228px;  /* Adjust for oval effect */
+    width: 228px; 
     height: 91px;
-    border: 3px dashed #b5651d; /* Brown-orange color */
+    border: 3px dashed #b5651d; 
     border-radius: 50%;
     transform-origin: center;
     animation: circling 2s linear infinite;
 }
 
-/* Keyframes for circling animation */
+
 @keyframes circling {
     0% {
         transform: rotate(0deg) translateX(20px) rotate(0deg);
@@ -107,3 +112,4 @@
         transform: rotate(360deg) translateX(20px) rotate(-360deg);
     }
 }
+
