@@ -21,7 +21,6 @@ html, body {
         background-size: cover; 
         background-position: center center;
         background-repeat: no-repeat;
-        color: #1f2937;
     
 }
 
@@ -54,7 +53,6 @@ html, body {
 
 .hero-subtitle {
     font-size: 1.125rem;
-    color: #4b5563;
     height: 31px;
 }
 
@@ -76,7 +74,7 @@ html, body {
 }
 
 .hero-button:hover {
-    background-color: #b5651d;
+    background-color: #ce701d;
 }
 
 .circle-wrapper {
