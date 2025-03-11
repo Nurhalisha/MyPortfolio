@@ -2,23 +2,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
-
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .about-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;  
   margin-left: -3%;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background-size: cover;
-  background-position: center;
-  padding: 27px;  
+  padding: 27px;
   width: 112%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: visible;  
 }
 
 .about-card {
@@ -36,6 +39,8 @@
   flex: 1;
   text-align: center;
   padding: 20px;
+    width: 100%;
+  max-width: 100%;
 }
 
 .title {
@@ -97,6 +102,8 @@
 .right-section {
   flex: 1;
   padding: 20px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .box {
@@ -184,12 +191,11 @@
   color: #007bff;
 }
 
-
 .skills-list {
   display: flex;
-  flex-wrap: wrap;  /* Allow items to wrap to the next row */
-  justify-content: center; /* Center items */
-  gap: 7px; /* Space between items */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
   list-style: none;
   padding: 0;
 }
@@ -200,10 +206,10 @@
   font-size: 16px;
   font-weight: 500;
   color: #81486d;
-  gap: 2px; /* Space between icon and text */
-  justify-content: center; /* Centers items */
-  flex: 1 1 calc(33.33% - 15px); /* Ensures 3 items per row */
-  max-width: calc(33.33% - 15px); /* Keeps items aligned in 3s */
+  gap: 2px;
+  justify-content: center;
+  flex: 1 1 calc(33.33% - 15px);
+  max-width: calc(33.33% - 15px);
 }
 
 /* Icons */
@@ -212,7 +218,69 @@
   width: 20px;
   height: 20px;
 }
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    width: 100%;
+    padding: 20px;
+    margin-top: 156%;
+    margin-left: 3%;
+  }
 
-* {
-  cursor: pointer;
+  .about-card {
+    flex-direction: column; /* Ensure content stacks vertically */
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .left-section, .right-section {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* Ensures profile image and text stay in the correct order on mobile */
+  .profile-image {
+    width: 100px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: justify;
+  }
+
+  /* Ensure skills list stacks properly and adjusts */
+  .skills-list li {
+    flex: 1 1 100%; /* Stack skills vertically on mobile */
+    max-width: 100%;
+  }
+
+  /* Contact and Back button adjust to full width */
+  .contact-button, .back-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .box h3 {
+    font-size: 16px;
+  }
+
+  .box li {
+    font-size: 12px;
+  }
 }
