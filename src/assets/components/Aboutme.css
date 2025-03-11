@@ -228,7 +228,7 @@
   }
 
   .about-card {
-    flex-direction: column; /* Ensure content stacks vertically */
+    flex-direction: column; 
     margin-top: 0;
     padding: 10px;
   }
@@ -239,7 +239,6 @@
     padding: 15px;
   }
 
-  /* Ensures profile image and text stay in the correct order on mobile */
   .profile-image {
     width: 100px;
     height: 120px;
@@ -263,13 +262,11 @@
     text-align: justify;
   }
 
-  /* Ensure skills list stacks properly and adjusts */
   .skills-list li {
-    flex: 1 1 100%; /* Stack skills vertically on mobile */
+    flex: 1 1 100%;
     max-width: 100%;
   }
 
-  /* Contact and Back button adjust to full width */
   .contact-button, .back-button {
     width: 100%;
     font-size: 14px;
