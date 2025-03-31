@@ -1,14 +1,14 @@
 import React from "react";
 
-const safeEvaluate = (expression) => {
-  try {
-    return new Function(`return (${expression})`)();
-  } catch {
-    return "Error";
-  }
-};
-
 export default function Scientific({ input, setInput }) {
+  const safeEvaluate = (expression) => {
+    try {
+      return new Function("return " + expression)();
+    } catch {
+      return "Error";
+    }
+  };
+
   const handleSciClick = (func) => {
     let result;
     try {
