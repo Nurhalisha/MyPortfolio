@@ -8,7 +8,7 @@ export default function MainCal() {
   const safeEvaluate = (expression) => {
     if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
     try {
-      return Function("return " + expression)();
+      return Function(`"use strict"; return (${expression})`)();
     } catch {
       return "Error";
     }
