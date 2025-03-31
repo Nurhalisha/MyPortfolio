@@ -7,7 +7,10 @@ export default function MainCal() {
 
   const safeEvaluate = (expression) => {
     try {
-      return Function(`"use strict"; return (${expression})`)();
+      if (!/^[0-9+\-*/().\s]+$/.test(expression)) {
+        return "Error";
+      }
+      return new Function("return " + expression)();
     } catch {
       return "Error";
     }
