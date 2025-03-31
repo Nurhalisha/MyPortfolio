@@ -1,5 +1,5 @@
 import React from "react";
-import { safeEvaluate } from "../utils/safeEvaluate"; // Import safe evaluator
+import { safeEvaluate } from "../utils/safeEvaluate";
 
 export default function Scientific({ input, setInput }) {
   const handleSciClick = (func) => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Scientific from "./Scientific";
-import { safeEvaluate } from "../utils/safeEvaluate"; // Import safe evaluator
+import { safeEvaluate } from "../utils/safeEvaluate";
 
 export default function MainCal() {
   const [input, setInput] = useState("");
