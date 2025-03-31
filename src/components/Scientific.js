@@ -4,43 +4,46 @@ import { safeEvaluate } from "../utils/safeEvaluate";
 export default function Scientific({ input, setInput }) {
   const handleSciClick = (func) => {
     let result;
-    let evaluatedInput = safeEvaluate(input); // Ensure we get a number
+    let value = safeEvaluate(input); // Ensure we evaluate properly
 
-    if (isNaN(evaluatedInput)) return setInput("Error"); // Prevent NaN issues
+    if (isNaN(value)) {
+      setInput("Error");
+      return;
+    }
 
     try {
       switch (func) {
         case "^":
         case "yx":
         case "xy":
-          setInput(input + "**");
+          setInput(input + "^");
           return;
         case "ex":
-          result = Math.exp(evaluatedInput);
+          result = Math.exp(value);
           break;
         case "ln":
-          result = Math.log(evaluatedInput);
+          result = Math.log(value);
           break;
         case "log":
-          result = Math.log10(evaluatedInput);
+          result = Math.log10(value);
           break;
         case "sin":
-          result = Math.sin(evaluatedInput * (Math.PI / 180));
+          result = Math.sin(value * (Math.PI / 180)); // Convert degrees to radians
           break;
         case "cos":
-          result = Math.cos(evaluatedInput * (Math.PI / 180));
+          result = Math.cos(value * (Math.PI / 180));
           break;
         case "tan":
-          result = Math.tan(evaluatedInput * (Math.PI / 180));
+          result = Math.tan(value * (Math.PI / 180));
           break;
         case "sin-1":
-          result = Math.asin(evaluatedInput) * (180 / Math.PI);
+          result = Math.asin(value) * (180 / Math.PI);
           break;
         case "cos-1":
-          result = Math.acos(evaluatedInput) * (180 / Math.PI);
+          result = Math.acos(value) * (180 / Math.PI);
           break;
         case "tan-1":
-          result = Math.atan(evaluatedInput) * (180 / Math.PI);
+          result = Math.atan(value) * (180 / Math.PI);
           break;
         case "π":
           setInput(input + Math.PI);
@@ -49,22 +52,27 @@ export default function Scientific({ input, setInput }) {
           setInput(input + Math.E);
           return;
         case "1/x":
-          result = 1 / evaluatedInput;
+          result = value !== 0 ? 1 / value : "Error";
           break;
         case "%":
-          result = evaluatedInput / 100;
+          result = value / 100;
           break;
         case "n!":
-          const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
-          result = factorial(evaluatedInput);
+          result = factorial(value);
           break;
         default:
           result = "Error";
       }
-      setInput(isNaN(result) ? "Error" : result.toString()); // Prevent NaN results
+      setInput(result.toString());
     } catch {
       setInput("Error");
     }
+  };
+
+  // Factorial function
+  const factorial = (n) => {
+    if (n < 0) return "Error"; // Factorial of negative numbers is undefined
+    return n === 0 ? 1 : n * factorial(n - 1);
   };
 
   return (

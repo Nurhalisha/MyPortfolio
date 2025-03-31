@@ -2,20 +2,18 @@ export function safeEvaluate(expression) {
     if (!/^[0-9+\-*/^(). ]+$/.test(expression) || expression.trim() === "") return 0; // Allow ^ operator
   
     try {
-      const result = evaluateExpression(expression);
-      return isFinite(result) ? result : 0; // Ensure a valid number
+      return evaluateExpression(expression);
     } catch {
       return 0;
     }
   }
   
-  // Converts infix expressions to postfix and evaluates them
   function evaluateExpression(expression) {
     const operators = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3 }; // Exponent has highest precedence
     const outputQueue = [];
     const operatorStack = [];
   
-    const tokens = expression.match(/(\d+(\.\d+)?)|[+\-*/^()]/g); // Improved tokenization
+    const tokens = expression.match(/(\d+(\.\d+)?)|[+\-*/^()]/g);
     if (!tokens) return 0;
   
     for (let token of tokens) {
@@ -24,8 +22,7 @@ export function safeEvaluate(expression) {
       } else if (token in operators) {
         while (
           operatorStack.length &&
-          operators[token] <= operators[operatorStack[operatorStack.length - 1]] &&
-          token !== "^" // Exponentiation is **right-associative**, so it shouldn’t pop immediately
+          operators[token] < operators[operatorStack[operatorStack.length - 1]]
         ) {
           outputQueue.push(operatorStack.pop());
         }
@@ -36,7 +33,7 @@ export function safeEvaluate(expression) {
         while (operatorStack.length && operatorStack[operatorStack.length - 1] !== "(") {
           outputQueue.push(operatorStack.pop());
         }
-        if (!operatorStack.length || operatorStack.pop() !== "(") return 0; // Handle unmatched brackets
+        operatorStack.pop();
       }
     }
   
@@ -44,23 +41,26 @@ export function safeEvaluate(expression) {
       outputQueue.push(operatorStack.pop());
     }
   
-    const evalStack = [];
-    for (let token of outputQueue) {
+    return evaluatePostfix(outputQueue);
+  }
+  
+  // Evaluates postfix expression
+  function evaluatePostfix(postfix) {
+    const stack = [];
+    for (let token of postfix) {
       if (typeof token === "number") {
-        evalStack.push(token);
+        stack.push(token);
       } else {
-        const b = evalStack.pop();
-        const a = evalStack.pop();
-        if (b === 0 && token === "/") return 0; // Prevent division by zero
-        if (a === undefined || b === undefined) return 0;
-        if (token === "+") evalStack.push(a + b);
-        if (token === "-") evalStack.push(a - b);
-        if (token === "*") evalStack.push(a * b);
-        if (token === "/") evalStack.push(a / b);
-        if (token === "^") evalStack.push(a ** b); // Fixes exponentiation
+        const b = stack.pop();
+        const a = stack.pop();
+        if (b === 0 && token === "/") return "Error"; // Prevent division by zero
+        if (token === "+") stack.push(a + b);
+        if (token === "-") stack.push(a - b);
+        if (token === "*") stack.push(a * b);
+        if (token === "/") stack.push(a / b);
+        if (token === "^") stack.push(Math.pow(a, b));
       }
     }
-  
-    return evalStack[0] ?? 0;
+    return stack[0] ?? 0;
   }
   
