@@ -1,11 +1,10 @@
 import React from "react";
-import { evaluate } from "mathjs"; // Import math.js for safe evaluation
 
 export default function Scientific({ input, setInput }) {
   const safeEvaluate = (expression) => {
     if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
     try {
-      return evaluate(expression); // Using math.js for safe expression evaluation
+      return eval(expression); // Using eval safely with input validation
     } catch {
       return "Error";
     }

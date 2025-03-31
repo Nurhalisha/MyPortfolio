@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { evaluate } from "mathjs"; // Import math.js for safe evaluation
 import Scientific from "./Scientific";
 
 export default function MainCal() {
@@ -9,7 +8,7 @@ export default function MainCal() {
   const safeEvaluate = (expression) => {
     if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
     try {
-      return evaluate(expression); // Using math.js instead of new Function()
+      return eval(expression); // Using eval safely with regex validation
     } catch {
       return "Error";
     }
