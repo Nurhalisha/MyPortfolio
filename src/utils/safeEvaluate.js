@@ -1,10 +1,11 @@
 export function safeEvaluate(expression) {
-    if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
+    if (!/^[0-9+\-*/(). ]+$/.test(expression) || expression.trim() === "") return 0; // Return 0 instead of "Error"
   
     try {
-      return evaluateExpression(expression);
+      const result = evaluateExpression(expression);
+      return isNaN(result) || result === undefined ? 0 : result; // Ensure a valid number
     } catch {
-      return "Error";
+      return 0;
     }
   }
   
@@ -14,8 +15,8 @@ export function safeEvaluate(expression) {
     const outputQueue = [];
     const operatorStack = [];
   
-    const tokens = expression.match(/[+\-*/()]|\d+(\.\d+)?/g);
-    if (!tokens) return "Error";
+    const tokens = expression.match(/\d+(\.\d+)?|[+\-*/()]/g);
+    if (!tokens) return 0; // Return 0 instead of "Error"
   
     for (let token of tokens) {
       if (!isNaN(token)) {
@@ -34,7 +35,7 @@ export function safeEvaluate(expression) {
         while (operatorStack.length && operatorStack[operatorStack.length - 1] !== "(") {
           outputQueue.push(operatorStack.pop());
         }
-        operatorStack.pop();
+        if (!operatorStack.length || operatorStack.pop() !== "(") return 0; // Handle unmatched brackets
       }
     }
   
@@ -49,6 +50,8 @@ export function safeEvaluate(expression) {
       } else {
         const b = evalStack.pop();
         const a = evalStack.pop();
+        if (b === 0 && token === "/") return 0; // Prevent division by zero
+        if (a === undefined || b === undefined) return 0; // Prevent NaN cases
         if (token === "+") evalStack.push(a + b);
         if (token === "-") evalStack.push(a - b);
         if (token === "*") evalStack.push(a * b);
@@ -56,6 +59,6 @@ export function safeEvaluate(expression) {
       }
     }
   
-    return evalStack[0];
+    return evalStack[0] ?? 0; // Ensure return is always a number
   }
   
