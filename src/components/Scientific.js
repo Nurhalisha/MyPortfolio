@@ -3,7 +3,8 @@ import React from "react";
 export default function Scientific({ input, setInput }) {
   const safeEvaluate = (expression) => {
     try {
-      return new Function("return " + expression)();
+      if (!/^[0-9+\-*/(). ]+$/.test(expression)) throw new Error("Invalid input");
+      return new Function(`"use strict"; return (${expression})`)();
     } catch {
       return "Error";
     }

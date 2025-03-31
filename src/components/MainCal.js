@@ -7,7 +7,7 @@ export default function MainCal() {
 
   const safeEvaluate = (expression) => {
     try {
-      return new Function("return " + expression)();
+      return Function(`"use strict"; return (${expression})`)();
     } catch {
       return "Error";
     }
