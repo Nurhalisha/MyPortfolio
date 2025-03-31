@@ -5,13 +5,17 @@ export default function MainCal() {
   const [input, setInput] = useState("");
   const [showSci, setShowSci] = useState(false);
 
+  const safeEvaluate = (expression) => {
+    try {
+      return Function(`'use strict'; return (${expression})`)();
+    } catch {
+      return "Error";
+    }
+  };
+
   const handleClick = (value) => {
     if (value === "=") {
-      try {
-        setInput(eval(input).toString());
-      } catch {
-        setInput("Error");
-      }
+      setInput(safeEvaluate(input).toString());
     } else {
       setInput(input + value);
     }

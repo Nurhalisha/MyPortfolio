@@ -1,5 +1,13 @@
 import React from "react";
 
+const safeEvaluate = (expression) => {
+  try {
+    return new Function(`return (${expression})`)();
+  } catch {
+    return "Error";
+  }
+};
+
 export default function Scientific({ input, setInput }) {
   const handleSciClick = (func) => {
     let result;
@@ -11,31 +19,31 @@ export default function Scientific({ input, setInput }) {
           setInput(input + "**");
           return;
         case "ex":
-          result = Math.exp(eval(input));
+          result = Math.exp(safeEvaluate(input));
           break;
         case "ln":
-          result = Math.log(eval(input));
+          result = Math.log(safeEvaluate(input));
           break;
         case "log":
-          result = Math.log10(eval(input));
+          result = Math.log10(safeEvaluate(input));
           break;
         case "sin":
-          result = Math.sin(eval(input) * (Math.PI / 180));
+          result = Math.sin(safeEvaluate(input) * (Math.PI / 180));
           break;
         case "cos":
-          result = Math.cos(eval(input) * (Math.PI / 180));
+          result = Math.cos(safeEvaluate(input) * (Math.PI / 180));
           break;
         case "tan":
-          result = Math.tan(eval(input) * (Math.PI / 180));
+          result = Math.tan(safeEvaluate(input) * (Math.PI / 180));
           break;
         case "sin-1":
-          result = Math.asin(eval(input)) * (180 / Math.PI);
+          result = Math.asin(safeEvaluate(input)) * (180 / Math.PI);
           break;
         case "cos-1":
-          result = Math.acos(eval(input)) * (180 / Math.PI);
+          result = Math.acos(safeEvaluate(input)) * (180 / Math.PI);
           break;
         case "tan-1":
-          result = Math.atan(eval(input)) * (180 / Math.PI);
+          result = Math.atan(safeEvaluate(input)) * (180 / Math.PI);
           break;
         case "π":
           setInput(input + Math.PI);
@@ -44,14 +52,14 @@ export default function Scientific({ input, setInput }) {
           setInput(input + Math.E);
           return;
         case "1/x":
-          result = 1 / eval(input);
+          result = 1 / safeEvaluate(input);
           break;
         case "%":
-          result = eval(input) / 100;
+          result = safeEvaluate(input) / 100;
           break;
         case "n!":
           const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
-          result = factorial(eval(input));
+          result = factorial(safeEvaluate(input));
           break;
         default:
           result = "Error";
