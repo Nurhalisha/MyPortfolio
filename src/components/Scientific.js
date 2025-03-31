@@ -4,7 +4,7 @@ export default function Scientific({ input, setInput }) {
   const safeEvaluate = (expression) => {
     if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
     try {
-      return new Function("return " + expression)();
+      return Function("return " + expression)();
     } catch {
       return "Error";
     }

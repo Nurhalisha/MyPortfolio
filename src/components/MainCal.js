@@ -6,11 +6,9 @@ export default function MainCal() {
   const [showSci, setShowSci] = useState(false);
 
   const safeEvaluate = (expression) => {
+    if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
     try {
-      if (!/^[0-9+\-*/().\s]+$/.test(expression)) {
-        return "Error";
-      }
-      return new Function("return " + expression)();
+      return Function("return " + expression)();
     } catch {
       return "Error";
     }
