@@ -3,7 +3,7 @@ export function safeEvaluate(expression) {
   
     try {
       const result = evaluateExpression(expression);
-      return isNaN(result) || result === undefined ? 0 : result; // Ensure a valid number
+      return isFinite(result) ? result : 0; // Ensure a valid number
     } catch {
       return 0;
     }
@@ -11,12 +11,12 @@ export function safeEvaluate(expression) {
   
   // Converts infix expressions to postfix and evaluates them
   function evaluateExpression(expression) {
-    const operators = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3 }; // Add exponentiation (^)
+    const operators = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3 }; // Exponent has highest precedence
     const outputQueue = [];
     const operatorStack = [];
   
-    const tokens = expression.match(/\d+(\.\d+)?|[+\-*/^()]/g);
-    if (!tokens) return 0; // Return 0 instead of "Error"
+    const tokens = expression.match(/(\d+(\.\d+)?)|[+\-*/^()]/g); // Improved tokenization
+    if (!tokens) return 0;
   
     for (let token of tokens) {
       if (!isNaN(token)) {
@@ -24,7 +24,8 @@ export function safeEvaluate(expression) {
       } else if (token in operators) {
         while (
           operatorStack.length &&
-          operators[token] <= operators[operatorStack[operatorStack.length - 1]]
+          operators[token] <= operators[operatorStack[operatorStack.length - 1]] &&
+          token !== "^" // Exponentiation is **right-associative**, so it shouldn’t pop immediately
         ) {
           outputQueue.push(operatorStack.pop());
         }
@@ -51,15 +52,15 @@ export function safeEvaluate(expression) {
         const b = evalStack.pop();
         const a = evalStack.pop();
         if (b === 0 && token === "/") return 0; // Prevent division by zero
-        if (a === undefined || b === undefined) return 0; // Prevent NaN cases
+        if (a === undefined || b === undefined) return 0;
         if (token === "+") evalStack.push(a + b);
         if (token === "-") evalStack.push(a - b);
         if (token === "*") evalStack.push(a * b);
         if (token === "/") evalStack.push(a / b);
-        if (token === "^") evalStack.push(Math.pow(a, b)); // Handle exponentiation correctly
+        if (token === "^") evalStack.push(a ** b); // Fixes exponentiation
       }
     }
   
-    return evalStack[0] ?? 0; // Ensure return is always a number
+    return evalStack[0] ?? 0;
   }
   
