@@ -1,15 +1,7 @@
 import React from "react";
+import { safeEvaluate } from "../utils/safeEvaluate"; // Import safe evaluator
 
 export default function Scientific({ input, setInput }) {
-  const safeEvaluate = (expression) => {
-    if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
-    try {
-      return eval(expression); // Using eval safely with input validation
-    } catch {
-      return "Error";
-    }
-  };
-
   const handleSciClick = (func) => {
     let result;
     try {

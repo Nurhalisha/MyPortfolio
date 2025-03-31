@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import Scientific from "./Scientific";
+import { safeEvaluate } from "../utils/safeEvaluate"; // Import safe evaluator
 
 export default function MainCal() {
   const [input, setInput] = useState("");
   const [showSci, setShowSci] = useState(false);
-
-  const safeEvaluate = (expression) => {
-    if (!/^[0-9+\-*/(). ]+$/.test(expression)) return "Error";
-    try {
-      return eval(expression); // Using eval safely with regex validation
-    } catch {
-      return "Error";
-    }
-  };
 
   const handleClick = (value) => {
     if (value === "=") {
