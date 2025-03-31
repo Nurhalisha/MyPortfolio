@@ -1,5 +1,5 @@
 export function safeEvaluate(expression) {
-    if (!/^[0-9+\-*/(). ]+$/.test(expression) || expression.trim() === "") return 0; // Return 0 instead of "Error"
+    if (!/^[0-9+\-*/^(). ]+$/.test(expression) || expression.trim() === "") return 0; // Allow ^ operator
   
     try {
       const result = evaluateExpression(expression);
@@ -11,11 +11,11 @@ export function safeEvaluate(expression) {
   
   // Converts infix expressions to postfix and evaluates them
   function evaluateExpression(expression) {
-    const operators = { "+": 1, "-": 1, "*": 2, "/": 2 };
+    const operators = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3 }; // Add exponentiation (^)
     const outputQueue = [];
     const operatorStack = [];
   
-    const tokens = expression.match(/\d+(\.\d+)?|[+\-*/()]/g);
+    const tokens = expression.match(/\d+(\.\d+)?|[+\-*/^()]/g);
     if (!tokens) return 0; // Return 0 instead of "Error"
   
     for (let token of tokens) {
@@ -56,6 +56,7 @@ export function safeEvaluate(expression) {
         if (token === "-") evalStack.push(a - b);
         if (token === "*") evalStack.push(a * b);
         if (token === "/") evalStack.push(a / b);
+        if (token === "^") evalStack.push(Math.pow(a, b)); // Handle exponentiation correctly
       }
     }
   
