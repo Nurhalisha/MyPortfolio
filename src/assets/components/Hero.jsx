@@ -1,10 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./hero.css";
+import bgImage from "../image/BGK.jpg";
 import "./hero.css";
 
-
 const ProfilePage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="hero-container">
+    <div className="hero-container" style={{ backgroundImage: `url(${bgImage})`, padding: 0 }}>
       <div className="hero-card">
         <div className="hero-logo">NS</div>
         <h1 className="hero-title">
@@ -20,7 +24,9 @@ const ProfilePage = () => {
           I believe brevity is key. My print and digital designs are all about minimalism and elegance.
         </p>
         <div>
-          <button className="hero-button">Hire Me</button>
+          <button className="hero-button" onClick={() => navigate("/about")}>
+            Hire Me
+          </button>
         </div>
       </div>
     </div>
