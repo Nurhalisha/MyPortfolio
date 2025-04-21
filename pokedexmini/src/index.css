@@ -1,119 +1,116 @@
+/* Base styles */
 body {
   font-family: 'Press Start 2P', cursive, Arial, sans-serif;
-  background: linear-gradient(to right, #ffcc00, #ff0000);
-  color: #222;
+  background: linear-gradient(120deg, #fceabb, #f8b500);
+  color: #333;
   margin: 0;
   padding: 0;
-  background-attachment: fixed;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+/* App container */
 .app-container {
   padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fffbea;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  margin: 2rem;
 }
 
-
-h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #d7263d;
-  text-transform: uppercase;
-  text-shadow: 1px 1px #fff;
+/* Headings */
+h1, h2, h3 {
+  color: #2a75bb;
+  text-shadow: 1px 1px #ffcb05;
 }
 
-
+/* Buttons */
 button {
   cursor: pointer;
-  padding: 1rem 2rem;
-  font-size: 0.9rem;
-  font-family: 'Press Start 2P', cursive;
-  background-color: #007bff;
-  color: white;
-  border: 2px solid #222;
-  border-radius: 10px;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: #ffcb05;
+  color: #2a75bb;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px #d4af37;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #ffcb05;
-  color: #222;
+  background-color: #f5b700;
   transform: scale(1.05);
-  box-shadow: 0 0 10px #333;
 }
 
+/* Pokedex Grid Layout */
 .pokedex-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
   padding: 1rem;
 }
 
+/* Pokémon Card Base Styles */
 .pokemon-card {
-  border: 2px solid #222;
+  border: 2px solid #2a75bb;
   border-radius: 10px;
+  padding: 1rem;
   background-color: #ffffff;
   text-align: center;
-  padding: 1rem;
-  transition: transform 0.2s;
-  box-shadow: 3px 3px 0 #222;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
 }
 
 .pokemon-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .pokemon-card img {
   width: 100px;
   height: 100px;
-  margin-bottom: 0.5rem;
 }
 
 .pokemon-card h3 {
-  font-size: 1rem;
-  text-transform: capitalize;
+  font-size: small;
+  color: #ef5350;
   margin: 0.5rem 0;
 }
 
 .pokemon-card p {
-  font-size: 0.75rem;
-  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #555;
+  height: 1px;
 }
 
+/* Pokémon Card Button */
 .pokemon-card button {
-  background-color: #ff4757;
+  margin-top: 0.5rem;
+  background-color: #2a75bb;
   color: white;
   padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  margin-top: 0.5rem;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 .pokemon-card button:hover {
-  background-color: #ff6b81;
+  background-color: #1e5a9c;
 }
 
-/* Team Display */
+/* Team section */
 .team-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
   padding: 1rem;
 }
 
 .team-card {
-  border: 2px dashed #555;
-  border-radius: 10px;
-  background-color: #fff8dc;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  background-color: #fff;
   text-align: center;
   padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .team-card img {
@@ -122,88 +119,28 @@ button:hover {
 }
 
 .team-card h3 {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-  text-transform: capitalize;
+  font-size: 1rem;
+  margin: 0.5rem 0;
 }
 
 .team-card p {
-  font-size: 0.7rem;
-  margin: 0.2rem 0;
+  font-size: 0.8rem;
+  color: #444;
 }
 
 /* Start Battle Button */
 .start-battle-button {
-  background-color: #2ecc71;
+  padding: 1rem 2rem;
+  background-color: #ef5350;
   color: white;
-  font-size: 1rem;
-  border: 2px solid #222;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
   margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .start-battle-button:hover {
-  background-color: #27ae60;
-}
-
-/* Battle Results */
-.battle-container {
-  text-align: center;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.battle-header {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.battle-stats {
-  margin: 1.5rem auto;
-  border: 2px solid #222;
-  border-radius: 10px;
-  padding: 1.5rem;
-  background-color: #f5f5f5;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-
-th, td {
-  padding: 12px;
-  text-align: center;
-}
-
-th {
-  background-color: #ffcb05;
-  color: #222;
-  font-size: 0.9rem;
-  border-bottom: 2px solid #222;
-}
-
-td {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:nth-child(even) td {
-  background-color: #f0f0f0;
-}
-
-.battle-result {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #e74c3c;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  background-color: #ffdddd;
-  border: 2px solid #e74c3c;
-  display: inline-block;
-  border-radius: 8px;
+  background-color: #d84315;
 }

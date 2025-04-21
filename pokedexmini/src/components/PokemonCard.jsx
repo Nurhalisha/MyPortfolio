@@ -7,9 +7,9 @@ const PokemonCard = ({ pokemon, onAddToTeam }) => {
       <img src={pokemon.image} alt={pokemon.name} />
       <h3>{pokemon.name}</h3>
       <p>HP: {pokemon.stats.hp}</p>
-      <p>Attack: {pokemon.stats.attack}</p>
-      <p>Defense: {pokemon.stats.defense}</p>
-      <p>Speed: {pokemon.stats.speed}</p>
+      <p>ATK: {pokemon.stats.attack}</p>
+      <p>DEF: {pokemon.stats.defense}</p>
+      <p>SPD: {pokemon.stats.speed}</p>
       <button onClick={() => onAddToTeam(pokemon)}>Add to Team</button>
     </div>
   );

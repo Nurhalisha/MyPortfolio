@@ -3,10 +3,8 @@ import React from 'react';
 const Battle = ({ playerPokemon, opponentPokemon, battleResult, onStartNewBattle }) => {
   return (
     <div className="battle-container">
-      <h2 className="battle-header">Battle</h2>
-
+      <h2 className="battle-header">Battle Time!</h2>
       <div className="battle-stats">
-        <h3>Stats Comparison:</h3>
         <table>
           <thead>
             <tr>
@@ -17,23 +15,21 @@ const Battle = ({ playerPokemon, opponentPokemon, battleResult, onStartNewBattle
             </tr>
           </thead>
           <tbody>
-            {Object.keys(battleResult.statsComparison).map(stat => (
+            {['hp', 'attack', 'defense', 'speed'].map(stat => (
               <tr key={stat}>
-                <td>{stat.charAt(0).toUpperCase() + stat.slice(1)}</td>
-                <td>{battleResult.statsComparison[stat].player}</td>
-                <td>{battleResult.statsComparison[stat].opponent}</td>
-                <td>{battleResult.statsComparison[stat].winner}</td>
+                <td>{stat.toUpperCase()}</td>
+                <td>{playerPokemon.stats[stat]}</td>
+                <td>{opponentPokemon.stats[stat]}</td>
+                <td>{battleResult[stat]}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      <div className="battle-result">
-        <h3>{battleResult.winner}</h3>
-      </div>
-
-      <button onClick={onStartNewBattle}>Start New Battle</button>
+      <div className="battle-result">{battleResult.winner}</div>
+      <button className="start-battle-button" onClick={onStartNewBattle}>
+        Start New Battle
+      </button>
     </div>
   );
 };

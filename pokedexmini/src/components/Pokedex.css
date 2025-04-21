@@ -1,6 +1,8 @@
 .pokedex-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background-color: #fefefe;
 }
