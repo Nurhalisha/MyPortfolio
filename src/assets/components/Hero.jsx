@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./hero.css";
 import bgImage from "../image/BGK.jpg";
+import "./hero.css";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
