@@ -1,0 +1,49 @@
+.battle-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.battle-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.battle-stats {
+  margin-bottom: 2rem;
+}
+
+.battle-stats table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.battle-stats th, .battle-stats td {
+  padding: 0.8rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.battle-result {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.start-btn {
+  padding: 1rem 2rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.start-btn:hover {
+  background-color: #218838;
+}
