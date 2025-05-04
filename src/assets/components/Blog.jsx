@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./blog.css";
+import "./Blog.css";
 import bgImage from "../image/BGRND.jpg";
 import collageImage from "../image/collage.jpg";
 
