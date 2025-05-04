@@ -10,29 +10,26 @@
 }
 
 .about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  margin-left: -3%;
-  justify-content: center;
-  min-height: 100vh;
-  background-size: cover;
-  padding: 27px;
-  width: 112%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  overflow: visible;  
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: -7%;
+      justify-content: center;
+      min-height: 100vh;
+      background-size: cover;
+      padding: 44px;
+      width: 112%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      overflow: visible;
+  }
 
 .about-card {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 4%;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
+  margin-top: -4%;
   border-radius: 12px;
   padding: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .left-section {
@@ -48,7 +45,7 @@
   font-weight: 600;
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: #81486d;
+  color: rgb(0 0 0 / 68%);
 }
 
 .profile-image {
@@ -63,26 +60,33 @@
 .name {
   font-size: 22px;
   font-weight: 600;
-  color: #b5651d;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: rgb(0 0 0 / 68%);
+  color: #f0ebee;
 }
 
 .role {
   font-size: 18px;
   font-weight: 500;
-  color: #b5651dd6;
+  color: #f0ebee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: rgb(0 0 0 / 68%);
   margin-top: 5px;
 }
 
 .description {
   font-size: 14px;
   font-weight: 400;
-  color: #81486d;
+  color: #f0ebee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: rgb(0 0 0 / 68%);
   margin-top: 10px;
   text-align: justify;
+  padding: 10px;
 }
 
 .contact-button {
-  background: linear-gradient(135deg, #b5651d, #0056b3);
+  background: linear-gradient(135deg, #3c230c, #0056b3);
   color: white;
   padding: 10px 18px;
   border: none;
@@ -117,7 +121,7 @@
 .box h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #81486d;
+  color: rgb(0 0 0 / 68%);
   margin-bottom: 8px;
 }
 
@@ -129,14 +133,14 @@
 .box li {
   font-size: 14px;
   font-weight: 400;
-  color: #81486d;
+  color: rgb(0 0 0 / 68%);
   margin-bottom: 5px;
   text-align: left;
 }
 
 /* Back Button */
 .back-button {
-  color: #b5651d;
+  color: rgb(0 0 0 / 68%);
   padding: 10px 18px;
   border: none;
   border-radius: 8px;
@@ -205,7 +209,7 @@
   align-items: center;
   font-size: 16px;
   font-weight: 500;
-  color: #81486d;
+  color: rgb(0 0 0 / 68%);
   gap: 2px;
   justify-content: center;
   flex: 1 1 calc(33.33% - 15px);
@@ -250,13 +254,19 @@
 
   .name {
     font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background: rgb(0 0 0 / 68%);
   }
 
   .role {
     font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background: rgb(0 0 0 / 68%);
   }
 
   .description {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background: rgb(0 0 0 / 68%);
     font-size: 14px;
     margin-top: 10px;
     text-align: justify;
