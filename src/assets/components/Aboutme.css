@@ -222,30 +222,58 @@
   width: 20px;
   height: 20px;
 }
-/* Mobile Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-container {
     width: 100%;
-    padding: 20px;
-    margin-top: 156%;
-    margin-left: 3%;
+    margin-left: 0;
+    padding: 30px 20px;
   }
 
   .about-card {
-    flex-direction: column; 
+    flex-direction: column;
+    align-items: center;
     margin-top: 0;
-    padding: 10px;
   }
 
-  .left-section, .right-section {
-    flex: 1 1 100%;
-    text-align: center;
+  .left-section,
+  .right-section {
     padding: 15px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 145px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .skills-list li {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 20px 15px;
   }
 
   .profile-image {
     width: 100px;
-    height: 120px;
+    height: 125px;
   }
 
   .title {
@@ -254,22 +282,21 @@
 
   .name {
     font-size: 18px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        background: rgb(0 0 0 / 68%);
   }
 
   .role {
-    font-size: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    background: rgb(0 0 0 / 68%);
+    font-size: 15px;
   }
 
   .description {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    background: rgb(0 0 0 / 68%);
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: justify;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .contact-button,
+  .back-button {
+    width: 100%;
+    font-size: 15px;
   }
 
   .skills-list li {
@@ -277,17 +304,7 @@
     max-width: 100%;
   }
 
-  .contact-button, .back-button {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px 0;
-  }
-
-  .box h3 {
-    font-size: 16px;
-  }
-
-  .box li {
-    font-size: 12px;
+  .popup-box {
+    width: 90%;
   }
 }

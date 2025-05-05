@@ -10,17 +10,17 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #1c1c1c;
   color: white;
+  scroll-behavior: smooth;
 }
 
-/* Blog Wrapper */
 .blog-wrapper {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  background-color: #1c1c1c; /* fallback charcoal tone */
+  background-color: #1c1c1c;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Blog Content */
 .blog-content {
   max-width: 1200px;
   margin: auto;
@@ -28,29 +28,30 @@ body {
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  width: 1200px;
+  animation: slideUp 1s ease forwards;
+  margin-top: -4%;
 }
 
-/* Blog Title */
 .blog-title {
   font-size: 36px;
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
   color: #ffffff;
+  animation: fadeIn 1.2s ease forwards;
 }
 
-/* Blog Date */
 .blog-date {
   text-align: center;
   margin-bottom: 40px;
   font-size: 18px;
   color: #ccc;
+  animation: fadeIn 1.4s ease forwards;
 }
 
-/* Day Sections */
 .day-section {
   margin-bottom: 50px;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .day-section h2 {
@@ -63,13 +64,13 @@ body {
   font-size: 16px;
   margin-bottom: 20px;
   color: #f0f0f0;
+  line-height: 1.6;
 }
 
-/* Image Grid */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: ;
+  gap: 1px;
 }
 
 .grid-image {
@@ -79,6 +80,7 @@ body {
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid #2e2e2e;
+  animation: fadeIn 1s ease forwards;
 }
 
 .grid-image:hover {
@@ -87,7 +89,6 @@ body {
   cursor: pointer;
 }
 
-/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -106,9 +107,9 @@ body {
   max-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 20px #00ffcc;
+  animation: zoomIn 0.4s ease;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -119,6 +120,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  animation: slideDown 0.5s ease;
 }
 
 .navbar-left h1 {
@@ -137,10 +139,42 @@ body {
   color: #00ffcc;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.collage-image {
+  width: 100%;
+  max-height: 562px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+  animation: fadeIn 1s ease forwards;
+}
+
+@media (max-width: 1024px) {
   .blog-content {
-    padding: 20px;
+    width: 95%;
+    padding: 30px;
+  }
+
+  .blog-title {
+    font-size: 32px;
+  }
+
+  .day-section h2 {
+    font-size: 24px;
+  }
+
+  .grid-image {
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    margin: 10px 0;
   }
 
   .blog-title {
@@ -148,22 +182,92 @@ body {
   }
 
   .day-section h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .day-section p {
     font-size: 14px;
   }
 
+  .blog-content {
+    padding: 20px;
+  }
+
   .grid-image {
-    height: 140px;
+    height: 120px;
   }
 }
-.collage-image {
-  width: 73%;
-  margin-top: -24px;
-  max-height: 560px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+
+@media (max-width: 480px) {
+  .blog-content {
+    padding: 15px;
+  }
+
+  .blog-title {
+    font-size: 24px;
+  }
+
+  .grid-image {
+    height: 100px;
+  }
+
+  .collage-image {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
