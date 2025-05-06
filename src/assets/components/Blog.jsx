@@ -21,8 +21,8 @@ const Blog = () => {
         { src: imageImports["../image/day1-6.jpg"]?.default || "", alt: "Day 1 - Image 6" },
       ],
       description: `On April 7, our BSIT Educational Tour began with a historical deep dive through Manila’s iconic Rizal Park and Intramuros. 
-      The experience brought to life the lessons of our classrooms, as we stood where history unfolded—from José Rizal’s monument to the ancient walls of Fort Santiago.
-      Our day concluded with a stop at SM Mall of Asia, one of Asia’s largest malls, where we had time to relax and bond with classmates. This blend of learning and leisure set the tone for an exciting week ahead.`,
+      The experience brought to life the lessons of our classrooms, as we stood where history unfolded—from José Rizal’s monument to the ancient walls of Fort Santiago the underground prison cells used by the japanese in World war 2.
+      Our day concluded with a stop at SM Mall of Asia, one of Asia’s largest malls, where we had time to bond with classmates. This blend of learning and leisure set the tone for an exciting week ahead.`,
     },
     {
       day: "Day 2 - Subic Freeport",
@@ -35,7 +35,7 @@ const Blog = () => {
         { src: imageImports["../image/day2-6.jpg"]?.default || "", alt: "Day 2 - Image 6" },
       ],
       description: `Day two took us to the Subic Freeport Zone, a hub of industry and innovation. We explored the port monitoring systems and learned how Subic's operations 
-      differ from traditional Philippine localities due to its unique economic and regulatory structure. The visit emphasized the importance of global trade logistics and 
+      differ from traditional Philippine localities due to its unique economic and regulatory structure like how they monitor ships from other countries and what they do to help the ships that need to have a stop over if there is a storm. The visit emphasized the importance of global trade logistics and 
       technology infrastructure, offering a glimpse into real-world applications of our IT curriculum.`,
     },
     {
@@ -48,7 +48,7 @@ const Blog = () => {
         { src: imageImports["../image/day3-5.jpg"]?.default || "", alt: "Day 3 - Image 5" },
         { src: imageImports["../image/day3-6.jpg"]?.default || "", alt: "Day 3 - Image 6" },
       ],
-      description: `On April 9, we immersed ourselves in culture at the National Museum of the Philippines. Surrounded by centuries of art, artifacts, and natural history, 
+      description: `On April 9, we immersed ourselves in culture at the National Museum of the Philippines. Surrounded by art, artifacts, and natural history, 
       we reflected on the rich heritage that shaped our identity as Filipinos. Later, we visited Quezon Memorial Park, where we learned more about former President Manuel L. 
       Quezon’s legacy and viewed historical documents and exhibits. It was a meaningful day of national pride and cultural appreciation.`,
     },
@@ -90,9 +90,7 @@ const Blog = () => {
         { src: imageImports["../image/day6-5.jpg"]?.default || "", alt: "Day 6 - Image 5" },
         { src: imageImports["../image/day6-6.jpg"]?.default || "", alt: "Day 6 - Image 6" },
       ],
-      description: `Day six took us up north to the scenic highlands of Baguio. We visited the famous Strawberry Farm in La Trinidad, where we had a hands-on experience 
-      picking strawberries and learning about sustainable farming practices. Next, we toured the Philippine Military Academy, gaining insight into military training and 
-      discipline. The day ended with a panoramic view from Mines View Park—a perfect mix of education and exploration.`,
+      description: `Day six took us up north to the scenic highlands of Baguio We visited the famous Strawberry Farm in La Trinidad. Next, we went to Bell church and then toured the Philippine Military Academy where we saw The Air Power Park. The day ended with a panoramic view from Mines View Park—a perfect mix of education and exploration.`,
     },
     {
       day: "Day 7 - Baguio Stroll",
@@ -104,7 +102,7 @@ const Blog = () => {
         { src: imageImports["../image/day7-5.jpg"]?.default || "", alt: "Day 7 - Image 5" },
         { src: imageImports["../image/day7-6.jpg"]?.default || "", alt: "Day 7 - Image 6" },
       ],
-      description: `Our final day was more relaxed but no less meaningful. We explored Baguio’s public parks and landmarks, breathing in the crisp mountain air and reflecting 
+      description: `Our final day was more relaxed but no less meaningful. We explored Baguio’s public parks, breathing in the crisp mountain air and reflecting 
       on everything we had learned over the past week. It was a day of bonding and gratitude—a moment to celebrate friendships, new knowledge, and unforgettable memories 
       made during our BSIT Educational Tour.`,
     },
