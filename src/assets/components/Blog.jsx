@@ -95,7 +95,10 @@ This visit was both eye-opening and inspiring, showing us the profound impact th
         { src: imageImports["../image/day6-5.jpg"]?.default || "", alt: "Day 6 - Image 5" },
         { src: imageImports["../image/day6-6.jpg"]?.default || "", alt: "Day 6 - Image 6" },
       ],
-      description: `Day six took us up north to the scenic highlands of Baguio We visited the famous Strawberry Farm in La Trinidad. Next, we went to Bell church and then toured the Philippine Military Academy where we saw The Air Power Park. The day ended with a panoramic view from Mines View Park—a perfect mix of education and exploration.`,
+      description: `On Day Six, we ventured up to the scenic highlands of Baguio, a city known for its cool climate and breathtaking landscapes. Our first stop was the famous Strawberry Farm in La Trinidad, where we had the chance to take in the vast fields of strawberries that the area is well known for. While we didn’t participate in the farming process, we were able to enjoy the view of the fields and the picturesque surroundings, giving us a sense of the region’s agricultural charm.
+Next, we visited Bell Church, a serene and beautifully designed temple located just outside of Baguio. The church’s Buddhist-inspired architecture and peaceful atmosphere provided a moment of reflection. We admired the intricate carvings, vibrant murals, and the well-maintained gardens, which offered a quiet space to appreciate the cultural diversity of the region.
+Our tour continued with a visit to the Philippine Military Academy (PMA), where we got an inside look at the institution that trains future officers of the Armed Forces of the Philippines. We toured the facilities and learned about the Academy’s history, its role in shaping military leaders, and the rigorous training that cadets undergo. A standout part of the visit was our exploration of the Air Power Park, where we had the chance to view a variety of military aircraft, including fighter jets and helicopters, that showcase the strength and capabilities of the country's air defense.
+The day concluded with a visit to Mines View Park, one of the most iconic spots in Baguio. From the park, we enjoyed a panoramic view of the surrounding mountains and valleys. The cool breeze and the stunning landscape provided a perfect backdrop for relaxation and reflection, making it a peaceful and awe-inspiring way to end our day of exploration.`,
     },
     {
       day: "Day 7 - Baguio Stroll",
@@ -107,9 +110,13 @@ This visit was both eye-opening and inspiring, showing us the profound impact th
         { src: imageImports["../image/day7-5.jpg"]?.default || "", alt: "Day 7 - Image 5" },
         { src: imageImports["../image/day7-6.jpg"]?.default || "", alt: "Day 7 - Image 6" },
       ],
-      description: `Our final day was more relaxed but no less meaningful. We explored Baguio’s public parks, breathing in the crisp mountain air and reflecting 
-      on everything we had learned over the past week. It was a day of bonding and gratitude—a moment to celebrate friendships, new knowledge, and unforgettable memories 
-      made during our BSIT Educational Tour.`,
+      description: `Our final day in Baguio was a more relaxed but equally meaningful experience. We spent the day at Burnham Park, a peaceful urban park in the heart of Baguio City that perfectly encapsulates the beauty of the highlands. Known for its serene atmosphere and lush greenery, the park offered a much-needed break after a week filled with exploration and learning.
+As we wandered through the park, we breathed in the crisp mountain air, feeling the cool breeze that Baguio is famous for. We strolled around the man-made lake, where many of us took the opportunity to rent boats and paddle across the calm waters, enjoying the tranquility of our surroundings. The park's well-maintained gardens and vibrant flowers provided a calming backdrop, while the gentle hum of fellow visitors added to the peaceful vibe.
+We also made time to reflect on all we had experienced during the week—from the rich history of Rizal Park and Intramuros to the technological innovations we saw in HyTec Power Inc. and the MMDA Command Center. It was a chance to relax and take in the beauty of Baguio, while also reflecting on the friendships we had formed with classmates and the knowledge we had gained along the way.
+For many of us, the day at Burnham Park was a reminder of the importance of balance—between hard work and rest, between learning and self-reflection. It gave us a moment to appreciate how far we had come since the start of the tour, as well as how much we had grown—not just as students but as individuals.
+The day was not only a time for bonding but also for gratitude. It was a moment to express thanks for the opportunity to explore new places, meet new people, and be part of a memorable experience. As the tour came to a close, we reflected on the unforgettable memories we had created, the new knowledge we had gained, and the friendships that had blossomed throughout the week.
+In many ways, this final day symbolized the perfect conclusion to our BSIT Educational Tour—a harmonious blend of relaxation, reflection, and appreciation for all we had accomplished.
+`,
     },
   ];
 
