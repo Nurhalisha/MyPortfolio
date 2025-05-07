@@ -129,6 +129,7 @@ In many ways, this final day symbolized the perfect conclusion to our BSIT Educa
         <div className="navbar-right">
           <Link to="/about">About Me</Link>
           <Link to="/projects">Projects</Link>
+          <Link to="/certificates">Certificates</Link>
           <Link to="/contact">Contact Me</Link>
         </div>
       </nav>

@@ -19,6 +19,7 @@ const About = () => {
         <div className="navbar-right">
           <Link to="/blog">Blog</Link>
           <Link to="/projects">Projects</Link>
+          <Link to="/certificates">Certificates</Link>
         <Link to="/contact">Contact Me</Link>
         </div>
       </nav>

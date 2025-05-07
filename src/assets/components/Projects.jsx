@@ -12,7 +12,8 @@ const Projects = () => {
         </div>
         <div className="navbar-right">
           <Link to="/about">About Me</Link>
-          <Link to="/projects">Projects</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/certificates">Certificates</Link>
           <Link to="/contact">Contact</Link>
         </div>
       </nav>
